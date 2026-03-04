@@ -165,3 +165,126 @@ print(f"37°C in Fahrenheit = {result}°F")
 
 print("\nDocstring:")
 print(celsius_to_fahrenheit.__doc__)
+
+my_tuple = (1, 2, 3, 4, 5)
+
+single = (5,)
+
+mixed = (1, "hello", 3.14, True)
+
+
+fruits = ("apple", "banana", "cherry")
+
+print(fruits[0])
+print(fruits[-1])
+print(fruits[0:2])
+
+
+person = ("Alice", 25, "NYC")
+name, age, city = person
+
+
+my_set = {1, 2, 3, 4, 5}
+
+my_set = {1, 2, 2, 3}
+print(my_set)
+
+empty = set()
+wrong = {}
+
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print(A | B)
+print(A & B)
+print(A - B)
+print(A ^ B)
+
+
+my_set = {1, 2, 3}
+
+my_set.add(4)
+my_set.update([5, 6])
+my_set.remove(2)
+my_set.discard(10)
+
+
+squares = [x**2 for x in range(1, 6)]
+print(squares)
+
+
+numbers = [1, 2, 3, 4, 5, 6]
+evens = [x for x in numbers if x % 2 == 0]
+print(evens)
+
+
+words = ["hello", "world"]
+upper = [w.upper() for w in words]
+print(upper)
+
+
+numbers = [1, 2, 3, 4, 5]
+labels = ["even" if x % 2 == 0 else "odd" for x in numbers]
+print(labels)
+
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flat = [x for row in matrix for x in row]
+print(flat)
+
+
+numbers = [1, 2, 2, 3, 3, 3]
+unique = {x**2 for x in numbers}
+print(unique)
+
+
+squares = {x: x**2 for x in range(1, 4)}
+print(squares)
+
+
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+    x = 0
+
+
+try:
+    x = int(input("Number: "))
+    y = int(input("Divisor: "))
+    result = x / y
+except ValueError:
+    print("Invalid number")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+
+try:
+    x = int(input("Enter number: "))
+except ValueError:
+    print("Invalid input")
+else:
+    print(f"You entered: {x}")
+
+
+file = None
+try:
+    file = open("data.txt", "r")
+    print(file.read())
+except FileNotFoundError:
+    print("File not found")
+finally:
+    if file:
+        file.close()
+
+
+def set_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative!")
+    print(f"Age set to {age}")
+
+try:
+    set_age(-5)
+except ValueError as e:
+    print(f"Error: {e}")
